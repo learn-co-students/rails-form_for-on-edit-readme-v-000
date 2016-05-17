@@ -761,3 +761,38 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/" for ::1 at 2016-04-19 23:17:25 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (8.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (18.9ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 2733ms (Views: 2656.1ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2016-04-19 23:17:47 +0100
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (204.5ms)
+Completed 200 OK in 425ms (Views: 335.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/1" for ::1 at 2016-04-19 23:17:58 +0100
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mlw6jJncPuPfUoxVXX/Fp7Txu60W8jYNXLfdIck+DQ7D5dWSKHBrLj0BZWg2VutLa0GGU4aKXmKVnI+0JXIhPA==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"asdfasdf kkk"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (2.6ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  UPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["description", "asdfasdf kkk"], ["updated_at", "2016-04-19 22:17:59.018805"], ["id", 1]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 28ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/posts/1" for ::1 at 2016-04-19 23:17:59 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 152ms (Views: 147.6ms | ActiveRecord: 0.4ms)
