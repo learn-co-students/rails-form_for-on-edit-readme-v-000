@@ -761,3 +761,72 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-05-28 18:02:12 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 393ms (Views: 382.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-05-28 18:02:15 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fZMJwImfue2UgXjNCFWyhhrQRjaUuvMmpTmDJsRsziN4l0fcx51DMUdG8pGCpaHcOF9eWM7kC1CLZxpRaDnyJQ==", "title"=>"Exercitation nostrum adipisci sit obcaecati tempor", "description"=>"Voluptate doloremque voluptate sed nostrud esse, eaque duis laboris reprehenderit, labore.", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.8ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Exercitation nostrum adipisci sit obcaecati tempor"], ["description", "Voluptate doloremque voluptate sed nostrud esse, eaque duis laboris reprehenderit, labore."], ["created_at", "2016-05-29 01:02:15.834993"], ["updated_at", "2016-05-29 01:02:15.834993"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 21ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/posts/5" for ::1 at 2016-05-28 18:02:15 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-05-28 18:02:19 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fZMJwImfue2UgXjNCFWyhhrQRjaUuvMmpTmDJsRsziN4l0fcx51DMUdG8pGCpaHcOF9eWM7kC1CLZxpRaDnyJQ==", "title"=>"Ex laudantium consectetur sapiente eligendi sapiente est dolorum distinctio Enim maxime cupidatat", "description"=>"Tempor consectetur, non voluptatibus itaque est esse, omnis at est.", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Ex laudantium consectetur sapiente eligendi sapiente est dolorum distinctio Enim maxime cupidatat"], ["description", "Tempor consectetur, non voluptatibus itaque est esse, omnis at est."], ["created_at", "2016-05-29 01:02:19.358487"], ["updated_at", "2016-05-29 01:02:19.358487"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/6" for ::1 at 2016-05-28 18:02:19 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-05-28 18:02:23 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fZMJwImfue2UgXjNCFWyhhrQRjaUuvMmpTmDJsRsziN4l0fcx51DMUdG8pGCpaHcOF9eWM7kC1CLZxpRaDnyJQ==", "title"=>"Inventore eaque sit obcaecati nihil", "description"=>"Inventore in quis voluptate atque laborum. Exercitationem autem dolor cupidatat aut natus illo consequatur, omnis possimus.", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Inventore eaque sit obcaecati nihil"], ["description", "Inventore in quis voluptate atque laborum. Exercitationem autem dolor cupidatat aut natus illo consequatur, omnis possimus."], ["created_at", "2016-05-29 01:02:23.163324"], ["updated_at", "2016-05-29 01:02:23.163324"]]
+  [1m[35m (0.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 2ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/7" for ::1 at 2016-05-28 18:02:23 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/7/edit" for ::1 at 2016-05-28 18:02:26 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered posts/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
