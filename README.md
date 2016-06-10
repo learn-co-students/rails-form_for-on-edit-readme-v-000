@@ -52,7 +52,7 @@ Let's take the `edit` form that utilized the `form_tag` that we built before for
 
   <label>Post Description</label><br>
   <%= text_area_tag :description, @post.description %><br>
-  
+
   <%= submit_tag "Submit Post" %>
 <% end %>
 ```
@@ -90,7 +90,7 @@ Lastly, `form_for` also automatically sets the `authenticity_token` value for us
 
   <label>Post Description</label><br>
   <%= f.text_area :description %><br>
-  
+
   <%= f.submit %>
 <% end %>
 ```
