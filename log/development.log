@@ -761,3 +761,326 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2016-07-29 14:35:34 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (4.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (2.6ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (37.2ms)
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 2.9ms)
+
+ActionView::Template::Error (undefined method `text_field_with_label' for #<#<Class:0x007fef6d42bbe8>:0x007fef6d57e1a8>
+Did you mean?  text_field_tag):
+    2: 
+    3: <%= form_for(@post) do |f| %>
+    4: 
+    5:   <%= text_field_with_label f, :title %><br>
+    6:   <%= text_area_with_label f, :description %><br>
+    7: 
+    8:   <%= submit_tag "Submit Post" %>
+  app/views/posts/edit.html.erb:5:in `block in _app_views_posts_edit_html_erb__1193988244228870353_70333153432580'
+  app/views/posts/edit.html.erb:3:in `_app_views_posts_edit_html_erb__1193988244228870353_70333153432580'
+
+
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (90.7ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (92.6ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (198.8ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2016-07-29 14:36:13 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (26.8ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `text_field_with_label' for #<#<Class:0x007fef6d42bbe8>:0x007fef6f013130>
+Did you mean?  text_field_tag):
+    2: 
+    3: <%= form_for(@post) do |f| %>
+    4: 
+    5:   <%= text_field_with_label f, :title %><br>
+    6:   <%= text_area_with_label f, :description %><br>
+    7: 
+    8:   <%= submit_tag "Submit Post" %>
+  app/views/posts/edit.html.erb:5:in `block in _app_views_posts_edit_html_erb__1193988244228870353_70333168127780'
+  app/views/posts/edit.html.erb:3:in `_app_views_posts_edit_html_erb__1193988244228870353_70333168127780'
+
+
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.0ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (53.8ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (131.2ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2016-07-29 14:39:16 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (31.5ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `text_field_with_label' for #<#<Class:0x007fef6d42bbe8>:0x007fef6ab52e88>
+Did you mean?  text_field_tag):
+    2: 
+    3: <%= form_for(@post) do |f| %>
+    4: 
+    5:   <%= text_field_with_label f, :title %><br>
+    6:   <%= f.label :description, "Some Desc"%><br>
+    7: 
+    8:   <%= submit_tag "Submit Post" %>
+  app/views/posts/edit.html.erb:5:in `block in _app_views_posts_edit_html_erb__1193988244228870353_70333132082540'
+  app/views/posts/edit.html.erb:3:in `_app_views_posts_edit_html_erb__1193988244228870353_70333132082540'
+
+
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.8ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (69.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (151.2ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2016-07-29 14:39:22 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 531ms (Views: 529.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-07-29 14:39:22 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-07-29 14:39:22 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-07-29 14:39:22 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-07-29 14:39:22 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-29 14:39:22 -0700
+
+
+Started GET "/posts/5/edit" for ::1 at 2016-07-29 14:41:12 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=5):
+  app/controllers/posts_controller.rb:23:in `edit'
+
+
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (82.9ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (64.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (152.5ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2016-07-29 14:41:20 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2016-07-29 14:41:49 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-07-29 14:41:49 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-07-29 14:41:49 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-07-29 14:41:49 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-29 14:41:49 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-07-29 14:41:49 -0700
+
+
+Started GET "/posts/new" for ::1 at 2016-07-29 14:51:37 -0700
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 51ms (Views: 43.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2016-07-29 14:51:44 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XMcxvD9fCTeR1yum3qzLIf9SxpQfE4j2/pKAClA/CG0D/dpT1pnwQ9zN7G1Hi7OlTszmtW+vvvgG1WBSARMgmg==", "title"=>"new title", "description"=>"new desc", "commit"=>"Submit Post"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  app/controllers/posts_controller.rb:35:in `post_params'
+  app/controllers/posts_controller.rb:15:in `create'
+
+
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (64.5ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (140.5ms)
+
+
+Started POST "/posts" for ::1 at 2016-07-29 14:52:43 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XMcxvD9fCTeR1yum3qzLIf9SxpQfE4j2/pKAClA/CG0D/dpT1pnwQ9zN7G1Hi7OlTszmtW+vvvgG1WBSARMgmg==", "title"=>"new title", "description"=>"new desc", "commit"=>"Submit Post"}
+Completed 400 Bad Request in 127223ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  app/controllers/posts_controller.rb:36:in `post_params'
+  app/controllers/posts_controller.rb:16:in `create'
+
+
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (91.7ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/dom/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (191.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-07-29 14:55:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (58.1ms)
+Completed 200 OK in 441ms (Views: 419.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-07-29 14:55:09 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-07-29 14:55:09 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-07-29 14:55:09 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-07-29 14:55:09 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-29 14:55:09 -0700
+
+
+Started POST "/posts" for ::1 at 2016-07-29 14:55:19 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"da4UwEjKCQ0TLp7MtrZKehlzmHOyb/lM7qWQ3Vja+a4qlP8voQzweV40WQcvkTL+qO24UsLTz0IW4nCFCfbRWQ==", "post"=>{"title"=>"new title", "description"=>"new desc"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "new title"], ["description", "new desc"], ["created_at", "2016-07-29 21:55:19.274185"], ["updated_at", "2016-07-29 21:55:19.274185"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 13ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/posts/5" for ::1 at 2016-07-29 14:55:19 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 16.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2016-07-29 14:55:29 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/5" for ::1 at 2016-07-29 14:55:45 -0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qkloPu2A9Ipu2vD8Avgh/7QMxzRhCmAFdkFEbvFuXOf1c4PRBEYN/iPANzeb31l7BZLnFRG2VguOBqQ2oEJ0EA==", "post"=>{"title"=>"new title", "description"=>"My edited desc."}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "My edited desc."], ["updated_at", "2016-07-29 21:55:45.030136"], ["id", 5]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 8ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/posts/5" for ::1 at 2016-07-29 14:55:45 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/5" for ::1 at 2016-07-29 14:55:56 -0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qkloPu2A9Ipu2vD8Avgh/7QMxzRhCmAFdkFEbvFuXOf1c4PRBEYN/iPANzeb31l7BZLnFRG2VguOBqQ2oEJ0EA==", "post"=>{"title"=>"Edited Title", "description"=>"My edited desc."}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "Edited Title"], ["updated_at", "2016-07-29 21:55:56.592366"], ["id", 5]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 6ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/posts/5" for ::1 at 2016-07-29 14:55:56 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.4ms)
+  [1m[36mPost Load (3.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" ASC LIMIT 1
