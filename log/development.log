@@ -761,3 +761,112 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/1/edit" for 71.47.95.106 at 2016-10-23 19:28:12 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 1232ms (Views: 1191.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/1/edit" for 71.47.95.106 at 2016-10-23 19:28:14 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 71.47.95.106 at 2016-10-23 19:28:42 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9KOR6JXBc1G7gVtfMLJpXS+cKo3Ct2QiK3ozy0PeadfOA86p1IIiw9reHDyrhWJopt1n+FZwonEo+2Yd9h8tmw==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"Blah"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", nil], ["description", nil], ["updated_at", "2016-10-23 19:28:42.453776"], ["id", 1]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.241.134.186:30000/posts/1
+Completed 302 Found in 30ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/posts/1" for 71.47.95.106 at 2016-10-23 19:28:42 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/1/edit" for 71.47.95.106 at 2016-10-23 19:31:20 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 37ms (Views: 24.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/1/edit" for 71.47.95.106 at 2016-10-23 19:31:29 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 71.47.95.106 at 2016-10-23 19:32:12 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h4oKdwiwiGoWc/Do/gGrzPdZwN1ADO+Cq0rzHsqACDW9KlU2SfPZ+Hcst4tlNqD5fhiNqNTLKdGoy6bIf0FMeQ==", "post"=>{"title"=>"Brad", "description"=>"W"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Brad"], ["description", "W"], ["updated_at", "2016-10-23 19:32:12.672729"], ["id", 1]]
+  [1m[35m (11.2ms)[0m  commit transaction
+Redirected to http://192.241.134.186:30000/posts/1
+Completed 302 Found in 16ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/posts/1" for 71.47.95.106 at 2016-10-23 19:32:12 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for 71.47.95.106 at 2016-10-23 19:32:19 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 71.47.95.106 at 2016-10-23 19:32:25 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GBrAfhznJL50RIxowIVWV1iHzAXohvG98Ln9zu9ljgQiup8/XaR1LBUbywtbsl1i0caBcHxBN+7zOKgYWqTKSA==", "post"=>{"title"=>"Brad", "description"=>"Watson"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "Watson"], ["updated_at", "2016-10-23 19:32:25.387352"], ["id", 1]]
+  [1m[35m (13.5ms)[0m  commit transaction
+Redirected to http://192.241.134.186:30000/posts/1
+Completed 302 Found in 20ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/posts/1" for 71.47.95.106 at 2016-10-23 19:32:25 +0000
+Cannot render console from 71.47.95.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 38ms (Views: 29.1ms | ActiveRecord: 0.2ms)
