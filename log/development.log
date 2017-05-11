@@ -761,3 +761,85 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/1/edit" for 142.196.162.253 at 2017-05-11 22:57:19 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 1319ms (Views: 1279.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 142.196.162.253 at 2017-05-11 22:57:21 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 142.196.162.253 at 2017-05-11 22:57:21 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 142.196.162.253 at 2017-05-11 22:57:21 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 142.196.162.253 at 2017-05-11 22:57:21 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 142.196.162.253 at 2017-05-11 22:57:21 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started PATCH "/posts/1" for 142.196.162.253 at 2017-05-11 22:57:31 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xWK27faw15aCqpQEWuWbfK5EBOpPwDFm0JjKXmU61mfKAxnb8Lfe8M+XZsU6RpB8bnplXwqLS0DZcTCuNbYyfQ==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"Editing post"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2017-05-11 22:57:31.230787"], ["id", 1]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Redirected to http://159.203.88.6:30014/posts/1
+Completed 302 Found in 9ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/posts/1" for 142.196.162.253 at 2017-05-11 22:57:31 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for 142.196.162.253 at 2017-05-11 23:02:41 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 540ms (Views: 514.2ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/posts/1" for 142.196.162.253 at 2017-05-11 23:02:51 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WcfQ9/1sFaiRX6yUkj+zX6sYqifbEg/JFXX6Rn+0GMtWpn/B+2scztxiXlXynLhfaybLkp5Zde8cnAC2Lzj80Q==", "post"=>{"title"=>"Weird", "description"=>"This is weird"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Weird"], ["description", "This is weird"], ["updated_at", "2017-05-11 23:02:51.075057"], ["id", 1]]
+  [1m[35m (5.9ms)[0m  commit transaction
+Redirected to http://159.203.88.6:30014/posts/1
+Completed 302 Found in 59ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/posts/1" for 142.196.162.253 at 2017-05-11 23:02:51 +0000
+Cannot render console from 142.196.162.253! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.2ms)
