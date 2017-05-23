@@ -52,7 +52,7 @@ Let's take the `edit` form that utilized the `form_tag` that we built before for
 
   <label>Post description</label><br>
   <%= text_area_tag :description, @post.description %><br>
-  
+
   <%= submit_tag "Submit Post" %>
 <% end %>
 ```
@@ -90,7 +90,7 @@ Our new form will look something like this:
 
   <label>Post description</label><br>
   <%= f.text_area :description %><br>
-  
+
   <%= f.submit %>
 <% end %>
 ```
