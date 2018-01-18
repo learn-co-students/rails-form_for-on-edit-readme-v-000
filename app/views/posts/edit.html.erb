@@ -1,4 +1,26 @@
 <h3>Post Form</h3>
+<!-- ** we can pass our @post instance to the form_for method; we already have access to it
+** we can  remove the path arg and the method call since form_for sets thatse automatically
+** since dealing w/ pre-existing record, it will know to favor puts over post; no need to specify -->
+
+<%= form_for(@post) do |f| %>  <label>Post title:</label><br> <%#this is the line we are changing%>
+
+  <% #we can dynamically assign form field elements to each of the post data attributes, along with auto filling the values
+  #for each field. We get this ActionView functionality because we're using the form_for method,
+  #which gives us access to the FormBuilder module in Rails. Inside of the form, we can now refactor the fields:
+  %>
+  <label>Post title:</label><br>
+  <%= f.text_field :title %><br>
+
+  <label>Post description</label><br>
+  <%= f.text_area :description %><br>
+
+  <%= f.submit %>
+<% end %>
+
+
+
+<!-- <h3>Post Form</h3>
 
 <%= form_tag post_path(@post), method: "put" do %>
   <label>Post title:</label><br>
@@ -6,6 +28,6 @@
 
   <label>Post Description</label><br>
   <%= text_area_tag :description, @post.description %><br>
-  
+
   <%= submit_tag "Submit Post" %>
-<% end %>
+<% end %> -->
