@@ -761,3 +761,69 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-06-06 22:54:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Mikie/.rvm/gems/ruby-2.3.4/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 20ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2017-06-06 22:54:14 -0400
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 353ms (Views: 345.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2017-06-06 22:54:20 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mv/TDMY34uOoh4Z+Ya5qOknpxdehXZBlbhIYijoYfa5W7eNotKZ8hGR+mizuAB1stQNEJDsB66tebOx3XfEzlw==", "title"=>"Puma Ignite running shoes Sz. 8.5", "description"=>"asfasdf", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Puma Ignite running shoes Sz. 8.5"], ["description", "asfasdf"], ["created_at", "2017-06-07 02:54:20.808278"], ["updated_at", "2017-06-07 02:54:20.808278"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/5" for ::1 at 2017-06-06 22:54:20 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 22.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2017-06-06 22:54:26 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/5" for ::1 at 2017-06-06 22:54:32 -0400
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SlC8hpBzsKmhodfbon1UIawu+3mowoBO4FMDEi4K1BWGQozi4uIuzm1Yy4kt0yN3UMR6ijKe+4DQLffvSeOaLA==", "post"=>{"title"=>"Puma Ignite running shoes Sz. 8.5", "description"=>"hi"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2017-06-07 02:54:32.134128"], ["id", 5]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/5" for ::1 at 2017-06-06 22:54:32 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/5" for ::1 at 2017-06-06 23:03:36 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 0.5ms)
