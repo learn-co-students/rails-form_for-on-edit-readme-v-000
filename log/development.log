@@ -761,3 +761,177 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 192.168.2.2 at 2017-06-01 16:23:49 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /var/lib/gems/2.3.0/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (0.9ms)
+Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 192.168.2.2 at 2017-06-01 16:23:55 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 279ms (Views: 277.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/2/" for 192.168.2.2 at 2017-06-01 16:24:00 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 192.168.2.2 at 2017-06-01 16:24:04 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (65.3ms)
+Completed 200 OK in 73ms (Views: 71.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/2" for 192.168.2.2 at 2017-06-01 16:24:07 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ai66lQTaO8Q7JZGI4xo85WvA4AsDrFB/Da+dUAEMSh33nNzhsxMLA7GED1QIfGew0Oi5GYshCdQ5PlfqWYDqzw==", "post"=>{"title"=>"Rails Introduction bb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2017-06-01 20:24:07.619926"], ["id", 2]]
+  [1m[35m (6.6ms)[0m  commit transaction
+Redirected to http://192.168.2.9:3000/posts/2
+Completed 302 Found in 10ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/posts/2" for 192.168.2.2 at 2017-06-01 16:24:07 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 192.168.2.2 at 2017-06-01 16:24:14 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/2" for 192.168.2.2 at 2017-06-01 16:25:22 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F7oazM1Mp0gnXXS7VYsVVw/iHsqFAilyLB72ItR/m/2KCHy4eoWXj6386me+7U4CtMpH2A2PcNkYjzyYjPM7Lw==", "post"=>{"title"=>"", "description"=>""}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", ""], ["description", ""], ["updated_at", "2017-06-01 20:25:22.847077"], ["id", 2]]
+  [1m[35m (8.3ms)[0m  commit transaction
+Redirected to http://192.168.2.9:3000/posts/2
+Completed 302 Found in 15ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/posts/2" for 192.168.2.2 at 2017-06-01 16:25:22 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 192.168.2.2 at 2017-06-01 16:25:26 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/2" for 192.168.2.2 at 2017-06-01 16:25:28 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+eRdwNxdVihccDf0gizq1Bu9tO8Qd3x84CIneKC8f0pkVju0a5Rm79bRqShpSrGBoJXt/Zj6JdfUs+3C+DDfmA==", "post"=>{"title"=>"sdfhgdf", "description"=>"fh"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "sdfhgdf"], ["description", "fh"], ["updated_at", "2017-06-01 20:25:28.784819"], ["id", 2]]
+  [1m[35m (6.6ms)[0m  commit transaction
+Redirected to http://192.168.2.9:3000/posts/2
+Completed 302 Found in 9ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/posts/2" for 192.168.2.2 at 2017-06-01 16:25:28 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 192.168.2.2 at 2017-06-01 16:25:32 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/2" for 192.168.2.2 at 2017-06-01 16:25:33 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qIySW3Fd6PRqN7t5CyypJgjeqruftNecGCFW0Yc2R8g1PvQvxpTYM+CWJaXgSvJzs/bzqRc5jjcssJxr37rnGg==", "post"=>{"title"=>"sdfhgdf", "description"=>"fh"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.168.2.9:3000/posts/2
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2" for 192.168.2.2 at 2017-06-01 16:25:33 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 192.168.2.2 at 2017-06-01 16:25:36 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/2" for 192.168.2.2 at 2017-06-01 16:25:38 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HNossXX+Ig9xNXBzHMM5rep24H12CvObnEZxjzavBhqBaErFwjcSyPuU7q/3pWL4UV65b/6HqjCo17s1biOmyA==", "post"=>{"title"=>"sdfhgdfd", "description"=>"fhd"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "sdfhgdfd"], ["description", "fhd"], ["updated_at", "2017-06-01 20:25:38.666139"], ["id", 2]]
+  [1m[36m (5.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.168.2.9:3000/posts/2
+Completed 302 Found in 8ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/posts/2" for 192.168.2.2 at 2017-06-01 16:25:38 -0400
+Cannot render console from 192.168.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms)
