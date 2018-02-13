@@ -761,3 +761,137 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 98.7.36.46 at 2018-02-13 06:42:35 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/home/wakenight123/code/labs/rails-form_for-on-edit-readme-v-000/app/controllers/posts_controller.rb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+	  redirect_to post_path(@post)
+	             ^):
+  app/controllers/posts_controller.rb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (66.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.3ms)
+
+
+Started GET "/posts" for 98.7.36.46 at 2018-02-13 06:42:55 +0000
+
+SyntaxError (/home/wakenight123/code/labs/rails-form_for-on-edit-readme-v-000/app/controllers/posts_controller.rb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+	  redirect_to (@post)
+	             ^):
+  app/controllers/posts_controller.rb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.0ms)
+
+
+Started GET "/posts" for 98.7.36.46 at 2018-02-13 06:43:06 +0000
+
+SyntaxError (/home/wakenight123/code/labs/rails-form_for-on-edit-readme-v-000/app/controllers/posts_controller.rb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+	  redirect_to @post
+	             ^):
+  app/controllers/posts_controller.rb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.8ms)
+
+
+Started GET "/posts" for 98.7.36.46 at 2018-02-13 06:43:33 +0000
+
+SyntaxError (/home/wakenight123/code/labs/rails-form_for-on-edit-readme-v-000/app/controllers/posts_controller.rb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+	  redirect_to post_path(@post)
+	             ^):
+  app/controllers/posts_controller.rb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.3ms)
+
+
+Started GET "/posts" for 98.7.36.46 at 2018-02-13 06:45:18 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.8ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 1175ms (Views: 1170.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 98.7.36.46 at 2018-02-13 06:45:25 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 35.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/1/edit" for 98.7.36.46 at 2018-02-13 06:45:29 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 98ms (Views: 96.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 98.7.36.46 at 2018-02-13 06:45:34 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AOFoFj6l+57Jy24qiMKVvNIZN9mILIteeTQ6Nr0pyIPYVazccYAkvyPgxcbCVjMDBCJDGZzjCRPsxGSpKAMp0Q==", "post"=>{"title"=>"Rails Introduction", "description"=>"asdfasdf"}, "commit"=>"Submit Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (60.7ms)[0m  [1mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Rails Introduction"], ["updated_at", "2018-02-13 06:45:34.585721"], ["id", 1]]
+  [1m[35m (5.5ms)[0m  commit transaction
+Redirected to http://159.203.84.37:30000/posts/1
+Completed 302 Found in 76ms (ActiveRecord: 66.5ms)
+
+
+Started GET "/posts/1" for 98.7.36.46 at 2018-02-13 06:45:34 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 92ms (Views: 88.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/2" for 98.7.36.46 at 2018-02-13 06:45:39 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 98.7.36.46 at 2018-02-13 06:45:42 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/2" for 98.7.36.46 at 2018-02-13 06:45:53 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKUp0yRPY16IExoK+FPO+Qfd/Q6MyujWJm7B4D/YZxpsEe0Za2q8f2I4seayx2hG0eaJzpgFapuznp9/qvKGSA==", "post"=>{"title"=>"Rails Introduction bbbcccddd", "description"=>"asdfasdfgggg"}, "commit"=>"Submit Post", "id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (1.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  UPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "Rails Introduction bbbcccddd"], ["description", "asdfasdfgggg"], ["updated_at", "2018-02-13 06:45:53.165792"], ["id", 2]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://159.203.84.37:30000/posts/2
+Completed 302 Found in 15ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/posts/2" for 98.7.36.46 at 2018-02-13 06:45:53 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 66ms (Views: 63.0ms | ActiveRecord: 0.2ms)
