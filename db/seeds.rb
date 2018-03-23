@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Fish.create(name: "Nemo", color: "Blue")
+Fish.create(name: "Jaws", color: "White")
+Fish.create(name: "Moby", color: "Green-ish Blue")
+
+Post.create(title: "Sad Story", description: "It's a long story")
+Post.create(title: "Happy Story", description: "It's a short story")
+Post.create(title: "Even Story", description: "It's a sort-of long story")

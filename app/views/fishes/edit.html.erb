@@ -1,0 +1,11 @@
+<h3>Fish Form</h3>
+
+<%= form_for(@fish) do |f| %>
+  <label>Fish name:</label><br>
+  <%= f.text_field :name %><br>
+
+  <label>Fish Color</label><br>
+  <%= f.text_field :color %><br>
+
+  <%= f.submit %>
+<% end %>

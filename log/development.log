@@ -761,3 +761,1227 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFishes (20180323033629)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFishes (20180323033629)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (43.3ms)[0m  [1mCREATE TABLE "fishes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "color" varchar) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180323033629"]]
+  [1m[36m (18.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (18.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (38.9ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20151230232412)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151230232412"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateFishes (20180323033629)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "fish" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "color" varchar) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180323033629"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "fish" ("name") VALUES (?)  [["name", "Nemo"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fish" ("name", "color") VALUES (?, ?)[0m  [["name", "Nemo"], ["color", "Purple"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+  [1m[35mFish Load (0.2ms)[0m  SELECT  "fish".* FROM "fish"  ORDER BY "fish"."id" DESC LIMIT 1
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (44.7ms)[0m  [1mDELETE FROM "fish" WHERE "fish"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (44.6ms)[0m  [1mSELECT COUNT(*) FROM "fish"[0m
+
+
+Started GET "/" for ::1 at 2018-03-22 22:49:16 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 46ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:49:25 -0600
+
+ActionController::RoutingError (No route matches [GET] "/fishes"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (27.1ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (137.9ms)
+
+
+Started GET "/posts" for ::1 at 2018-03-22 22:49:38 -0600
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1243ms (Views: 1239.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/fishes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-03-22 22:49:40 -0600
+
+
+Started GET "/assets/fishes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-03-22 22:49:40 -0600
+
+
+Started GET "/fish" for ::1 at 2018-03-22 22:50:20 -0600
+
+ActionController::RoutingError (No route matches [GET] "/fish"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (119.9ms)
+
+
+Started GET "/fishes/show" for ::1 at 2018-03-22 22:50:51 -0600
+Processing by FishesController#show as HTML
+  [1m[36mFish Load (0.3ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 15ms (ActiveRecord: 2.8ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Fish with 'id'=):
+  app/controllers/fishes_controller.rb:7:in `show'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.5ms)
+
+
+Started GET "/fishes/index" for ::1 at 2018-03-22 22:51:13 -0600
+Processing by FishesController#index as HTML
+  Rendered fishes/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+  [1m[36mFish Load (1.5ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+
+
+Started GET "/fishes/index" for ::1 at 2018-03-22 22:52:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FishesController#index as HTML
+  Rendered fishes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 292ms (Views: 280.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes/index" for ::1 at 2018-03-22 22:52:55 -0600
+Processing by FishesController#index as HTML
+  Rendered fishes/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes/index" for ::1 at 2018-03-22 22:53:59 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[35mFish Load (0.2ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 9ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Fish with 'id'=index):
+  app/controllers/fishes_controller.rb:7:in `show'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.8ms)
+
+
+Started GET "/fishes/index" for ::1 at 2018-03-22 22:54:37 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Fish with 'id'=index):
+  app/controllers/fishes_controller.rb:7:in `show'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.9ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:54:43 -0600
+Processing by FishesController#index as HTML
+  Rendered fishes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 19ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:54:47 -0600
+Processing by FishesController#index as HTML
+  Rendered fishes/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:55:39 -0600
+Processing by FishesController#index as HTML
+  Rendered fishes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:55:42 -0600
+Processing by FishesController#index as HTML
+  Rendered fishes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:56:16 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Fish with 'id'=1):
+  app/controllers/fishes_controller.rb:4:in `index'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.3ms)
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFish Load (0.2ms)[0m  SELECT "fish".* FROM "fish"
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:57:18 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.2ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered fishes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 284ms (Views: 263.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:58:03 -0600
+Processing by FishesController#index as HTML
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered fishes/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:58:07 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered fishes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes/2" for ::1 at 2018-03-22 22:58:14 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered fishes/show.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: 
+    4: <%= @fish.name %>
+    5: 
+    6: <% @fishes.each do |fish| %>
+    7:   <div><%= fish.name %></div>
+    8:   <div><%= fish.color %></div>
+    9: <% end %>
+  app/views/fishes/show.html.erb:6:in `_app_views_fishes_show_html_erb___4103169326229668965_70334759776320'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.7ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:58:26 -0600
+Processing by FishesController#index as HTML
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered fishes/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:59:01 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered fishes/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 23ms (Views: 17.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 22:59:05 -0600
+Processing by FishesController#index as HTML
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered fishes/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:00:20 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+  Rendered fishes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:00:37 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.3ms)[0m  SELECT "fish".* FROM "fish"
+  Rendered fishes/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/fishes/2" for ::1 at 2018-03-22 23:00:45 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered fishes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/fishes/2" for ::1 at 2018-03-22 23:02:10 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered fishes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes/2" for ::1 at 2018-03-22 23:02:44 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered fishes/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms)
+  [1m[36mPost Load (1.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20151230232412)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151230232412"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateFishes (20180323033629)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "fish" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "color" varchar) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180323033629"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fish" ("name", "color") VALUES (?, ?)[0m  [["name", "Nemo"], ["color", "Blue"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fish" ("name", "color") VALUES (?, ?)  [["name", "Jaws"], ["color", "White"]]
+  [1m[36m (6.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fish" ("name", "color") VALUES (?, ?)[0m  [["name", "Moby"], ["color", "Green-ish Blue"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mPost Load (1.7ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[36mFish Load (1.5ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Sad Story"], ["description", "It's a long story"], ["created_at", "2018-03-23 05:25:42.729821"], ["updated_at", "2018-03-23 05:25:42.729821"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Happy Story"], ["description", "It's a short story"], ["created_at", "2018-03-23 05:25:42.737011"], ["updated_at", "2018-03-23 05:25:42.737011"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Even Story"], ["description", "It's a sort-of long story"], ["created_at", "2018-03-23 05:25:42.740355"], ["updated_at", "2018-03-23 05:25:42.740355"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mPost Load (1.7ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mFish Load (0.2ms)[0m  SELECT "fish".* FROM "fish"
+
+
+Started GET "/fishes/2" for ::1 at 2018-03-22 23:36:47 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFish Load (0.2ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered fishes/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 444ms (Views: 409.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/fishes/4" for ::1 at 2018-03-22 23:36:52 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 4]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Fish with 'id'=4):
+  app/controllers/fishes_controller.rb:7:in `show'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.4ms)
+
+
+Started GET "/fishes/1" for ::1 at 2018-03-22 23:36:57 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered fishes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-22 23:37:02 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:37:06 -0600
+Processing by FishesController#index as HTML
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+  Rendered fishes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:37:37 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.1ms)[0m  SELECT "fish".* FROM "fish"
+  Rendered fishes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:37:40 -0600
+Processing by FishesController#index as HTML
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+  Rendered fishes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:37:58 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.1ms)[0m  SELECT "fish".* FROM "fish"
+  Rendered fishes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:38:08 -0600
+Processing by FishesController#index as HTML
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+  Rendered fishes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:38:48 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.1ms)[0m  SELECT "fish".* FROM "fish"
+  Rendered fishes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 18.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:39:13 -0600
+Processing by FishesController#index as HTML
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+  Rendered fishes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:40:02 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.1ms)[0m  SELECT "fish".* FROM "fish"
+  Rendered fishes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:40:12 -0600
+Processing by FishesController#index as HTML
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+  Rendered fishes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:42:29 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.3ms)[0m  SELECT "fish".* FROM "fish"
+  Rendered fishes/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 76ms (Views: 73.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/fishes/2" for ::1 at 2018-03-22 23:42:32 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered fishes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:57:30 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.4ms)[0m  SELECT "fish".* FROM "fish"
+  Rendered fishes/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 352ms (Views: 338.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-22 23:57:38 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fish/new" for ::1 at 2018-03-22 23:57:44 -0600
+
+ActionController::RoutingError (No route matches [GET] "/fish/new"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.7ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (131.5ms)
+
+
+Started GET "/fishes/edit" for ::1 at 2018-03-22 23:57:52 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 7ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Fish with 'id'=edit):
+  app/controllers/fishes_controller.rb:7:in `show'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.5ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-22 23:58:17 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.2ms)[0m  SELECT "fish".* FROM "fish"
+  Rendered fishes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2018-03-22 23:58:19 -0600
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (6.7ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 76ms (Views: 66.9ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/posts/edit" for ::1 at 2018-03-22 23:58:21 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=edit):
+  app/controllers/posts_controller.rb:7:in `show'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.8ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.5ms)
+
+
+Started GET "/posts/1" for ::1 at 2018-03-22 23:59:24 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2018-03-22 23:59:27 -0600
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/post/new" for ::1 at 2018-03-22 23:59:38 -0600
+
+ActionController::RoutingError (No route matches [GET] "/post/new"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (93.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2018-03-23 00:00:03 -0600
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1" for ::1 at 2018-03-23 00:00:21 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2018-03-23 00:00:26 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (97.4ms)
+Completed 200 OK in 114ms (Views: 112.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2018-03-23 00:00:53 -0600
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 00:01:18 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes/1/edit" for ::1 at 2018-03-23 00:01:23 -0600
+Processing by FishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fishes/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/fishes/1/edit" for ::1 at 2018-03-23 10:48:22 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FishesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFish Load (0.4ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered fishes/edit.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 639ms (Views: 601.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 10:49:26 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 245ms (Views: 244.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 10:52:20 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 48ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 10:55:59 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (5.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 419ms (Views: 396.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 11:14:55 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 84ms (Views: 83.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2018-03-23 11:17:54 -0600
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for ::1 at 2018-03-23 11:18:29 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FiGVWaFerrtRUNKrFl3GrNni9SnLYupK1Wo2lRdZ6SxqEM4Xss51IqaffMZHvk/SFJNIOzDkOGm6qWke6cnEsA==", "title"=>"Test in Browser", "description"=>"I'm entering in this post to see where I get re-directed to after I hit the submit button", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (9.6ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Test in Browser"], ["description", "I'm entering in this post to see where I get re-directed to after I hit the submit button"], ["created_at", "2018-03-23 17:18:29.943682"], ["updated_at", "2018-03-23 17:18:29.943682"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 49ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/posts/4" for ::1 at 2018-03-23 11:18:29 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 71ms (Views: 45.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 14:15:44 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 424ms (Views: 409.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 14:18:04 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/fishes" for ::1 at 2018-03-23 14:18:10 -0600
+Processing by FishesController#create as HTML
+  Parameters: {"fish"=>{"name"=>"Marckus"}}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:164:in `block in halting'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.9) lib/rack/etag.rb:24:in `call'
+  rack (1.6.9) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.9) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.10) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.3ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 14:20:30 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 47ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/fishes" for ::1 at 2018-03-23 14:20:37 -0600
+Processing by FishesController#create as HTML
+  Parameters: {"fish"=>{"name"=>"Maximus"}}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:164:in `block in halting'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.9) lib/rack/etag.rb:24:in `call'
+  rack (1.6.9) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.9) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.10) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.7ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 14:22:24 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (7.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 400ms (Views: 379.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 14:37:54 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 77ms (Views: 75.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/fishes" for ::1 at 2018-03-23 14:38:05 -0600
+Processing by FishesController#create as HTML
+  Parameters: {"fish"=>{"name"=>"Gozer"}}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms)
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:181:in `handle_unverified_request'
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:209:in `handle_unverified_request'
+  actionpack (4.2.10) lib/action_controller/metal/request_forgery_protection.rb:204:in `verify_authenticity_token'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:164:in `block in halting'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.9) lib/rack/etag.rb:24:in `call'
+  rack (1.6.9) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.9) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.9) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.10) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.9) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.9) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.9) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.9) lib/rack/lock.rb:17:in `call'
+  rack (1.6.9) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.9) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/richardburd/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.4ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 14:40:21 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 66ms (Views: 61.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/fishes" for ::1 at 2018-03-23 14:40:25 -0600
+Processing by FishesController#create as HTML
+  Parameters: {"fish"=>{"name"=>"Asdfgh"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (12.1ms)[0m  [1mINSERT INTO "fish" DEFAULT VALUES[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/fishes/4
+Completed 302 Found in 79ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/fishes/4" for ::1 at 2018-03-23 14:40:25 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered fishes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/fishes/3" for ::1 at 2018-03-23 14:41:24 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered fishes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes/4" for ::1 at 2018-03-23 14:41:28 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered fishes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes/4" for ::1 at 2018-03-23 14:42:38 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered fishes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/fishes/5" for ::1 at 2018-03-23 14:42:41 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Fish with 'id'=5):
+  app/controllers/fishes_controller.rb:7:in `show'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.3ms)
+
+
+Started GET "/fishes/4" for ::1 at 2018-03-23 14:42:45 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mFish Load (0.1ms)[0m  SELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered fishes/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 14:46:44 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 14:47:23 -0600
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2018-03-23 14:47:40 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"btxtNKgfSMtW2Lgb2m/BqHsUyhfFNXTTpZtCdpsZ7JgS7TZ6u4+TUqEXFnaLjEjWtmV3BT6zpvDKWB39ZYnBBA==", "name"=>"Aquatianais", "color"=>"Purple and Grey", "commit"=>"Submit Post"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2018-03-23 20:47:40.176333"], ["updated_at", "2018-03-23 20:47:40.176333"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 31ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/5" for ::1 at 2018-03-23 14:47:40 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5" for ::1 at 2018-03-23 14:47:47 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.1ms)
+  [1m[36mFish Load (5.6ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+  [1m[35mFish Load (0.2ms)[0m  SELECT  "fish".* FROM "fish"  ORDER BY "fish"."id" DESC LIMIT 1
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT  "fish".* FROM "fish"  ORDER BY "fish"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "fish" WHERE "fish"."id" = ?[0m  [["id", 4]]
+  [1m[35m (5.1ms)[0m  commit transaction
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT  "fish".* FROM "fish"  ORDER BY "fish"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "fish" WHERE "fish"."id" = ?[0m  [["id", 3]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mFish Load (0.2ms)[0m  [1mSELECT "fish".* FROM "fish"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "fish"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "fish" ("name", "color") VALUES (?, ?)  [["name", "Moby"], ["color", "Green-ish Blue"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "fish"
+
+
+Started GET "/fishes/new" for ::1 at 2018-03-23 15:00:21 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FishesController#new as HTML
+  Rendered fishes/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 474ms (Views: 459.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/fishes" for ::1 at 2018-03-23 15:00:34 -0600
+Processing by FishesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a7zZVc7Jn5kjqMRP0Up+RPN4Ly6iG1Ppb6NOvxdyHbIXjYIb3VlEANRnaiKAqfc6PgmSPFmdgcoAYBE06eIwLg==", "name"=>"Sharkshonm", "color"=>"Argamaon", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "fish" ("name", "color") VALUES (?, ?)[0m  [["name", "Sharkshonm"], ["color", "Argamaon"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/fishes/6
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/fishes/6" for ::1 at 2018-03-23 15:00:34 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFish Load (0.3ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered fishes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 76ms (Views: 39.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-23 15:00:38 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.1ms)[0m  SELECT "fish".* FROM "fish"
+  Rendered fishes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/fishes/index" for ::1 at 2018-03-23 15:00:53 -0600
+Processing by FishesController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mFish Load (0.1ms)[0m  [1mSELECT  "fish".* FROM "fish" WHERE "fish"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Fish with 'id'=index):
+  app/controllers/fishes_controller.rb:7:in `show'
+
+
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/richardburd/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.4ms)
+
+
+Started GET "/fishes" for ::1 at 2018-03-23 15:01:26 -0600
+Processing by FishesController#index as HTML
+  [1m[35mFish Load (0.1ms)[0m  SELECT "fish".* FROM "fish"
+  Rendered fishes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.1ms)
