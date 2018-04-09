@@ -1207,3 +1207,102 @@ NoMethodError (undefined method `update' for nil:NilClass):
   Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
   Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/posts/" for ::1 at 2018-04-09 11:50:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 146ms (Views: 137.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/edit" for ::1 at 2018-04-09 11:50:15 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=edit):
+  app/controllers/posts_controller.rb:7:in `show'
+
+
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.1ms)
+
+
+Started GET "/posts/3/edit" for ::1 at 2018-04-09 11:50:23 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered posts/edit.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/3" for ::1 at 2018-04-09 11:50:35 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4y7A9XnBvhaKe6AFyWetNzAqT1Ehk2l2TWpK3S8JwFsX/ToaX24lrRJ+8RiNOlVr3pPjojCWRPiLgCiB/jrlA==", "post"=>{"title"=>"This is screwed up", "description"=>"ANd I don't knowwhy"}, "commit"=>"Update Post", "id"=>"3"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:27:in `update'
+
+
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.3ms)
+
+
+Started PATCH "/posts/3" for ::1 at 2018-04-09 11:52:06 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4y7A9XnBvhaKe6AFyWetNzAqT1Ehk2l2TWpK3S8JwFsX/ToaX24lrRJ+8RiNOlVr3pPjojCWRPiLgCiB/jrlA==", "post"=>{"title"=>"This is screwed up", "description"=>"ANd I don't knowwhy"}, "commit"=>"Update Post", "id"=>"3"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:27:in `update'
+
+
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.4.2/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.6ms)
+
+
+Started PATCH "/posts/3" for ::1 at 2018-04-09 12:10:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4y7A9XnBvhaKe6AFyWetNzAqT1Ehk2l2TWpK3S8JwFsX/ToaX24lrRJ+8RiNOlVr3pPjojCWRPiLgCiB/jrlA==", "post"=>{"title"=>"This is screwed up", "description"=>"ANd I don't knowwhy"}, "commit"=>"Update Post", "id"=>"3"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:27:in `update'
+
+
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/susaneff/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.3ms)
+
+
+Started PATCH "/posts/3" for ::1 at 2018-04-09 12:12:30 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4y7A9XnBvhaKe6AFyWetNzAqT1Ehk2l2TWpK3S8JwFsX/ToaX24lrRJ+8RiNOlVr3pPjojCWRPiLgCiB/jrlA==", "post"=>{"title"=>"This is screwed up", "description"=>"ANd I don't knowwhy"}, "commit"=>"Update Post", "id"=>"3"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "This is screwed up"], ["description", "ANd I don't knowwhy"], ["updated_at", "2018-04-09 17:12:30.168198"], ["id", 3]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 16ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/posts/3" for ::1 at 2018-04-09 12:12:30 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 341ms (Views: 339.7ms | ActiveRecord: 0.1ms)
