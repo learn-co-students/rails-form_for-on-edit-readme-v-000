@@ -110,7 +110,6 @@ Now if you start the Rails server and go to an `edit` page, you'll see that the 
 ![Unpermitted Parameters](https://s3.amazonaws.com/flatiron-bucket/readme-lessons/unpermitted_params.png)
 
 Because `form_for` is bound directly with the `Post` model, we need to pass the model name into the Active Record `update` method in the controller. Let's change `@post.update(title: params[:title], description: params[:description])` to:
-
 ```ruby
 @post.update(params.require(:post))
 ```
