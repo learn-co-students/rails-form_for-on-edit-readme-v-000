@@ -25,7 +25,9 @@ class PostsController < ApplicationController
 
 	def update
 	  @post = Post.find(params[:id])
-	  @post.update(title: params[:title], description: params[:description])
+	  # @post.update(title: params[:title], description: params[:description]) <-- before
+		@post.update(params.require(:post)) # <-- after
+		#Because form_for is bound directly with the Post model, we need to pass the model name into #the Active Record update method in the controller. We need require because it gives us a hash #nasted in post.
 	  redirect_to post_path(@post)
 	end
 end
