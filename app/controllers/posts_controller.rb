@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
+		@post = find_obj_by_id
 	end
 
 	def new
@@ -20,12 +20,16 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		@post = Post.find(params[:id])
+		@post = find_obj_by_id
 	end
 
 	def update
-	  @post = Post.find(params[:id])
-	  @post.update(title: params[:title], description: params[:description])
-	  redirect_to post_path(@post)
+	  @post = find_obj_by_id
+		@post.update(params.require(:post))
+	   redirect_to post_path(@post)
 	end
 end
+
+	def find_obj_by_id
+		Post.find(params[:id])
+	end
