@@ -761,3 +761,1121 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-04 16:06:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.3ms)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-07-04 16:06:32 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 270ms (Views: 259.9ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-07-04 16:07:03 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e0m1tuQeCKeonw2nkpZvQPhJaQGygS1REjSLuVjjfu4Ja8SeNZCm7xNRdW0vDC17Vb3boqm7LQpKLcB+sqRqRw==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"yes\r\n"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2018-07-04 21:07:03.466378"], ["id", 1]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 5ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-07-04 16:07:03 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-07-04 16:07:08 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-07-04 16:07:42 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-07-04 16:10:17 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lPJhT9PUVFyf+bMBgZ7PTEQWVc15kTGE2H+cTyMn9PXm0BBnAlr6FCQ3y8s8BI136eLnbmKrMd+AZteIyWDgXA==", "post"=>{"title"=>"Bob", "description"=>"Bob\r\n"}, "commit"=>"Update Post", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:27:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-07-04 16:10:25 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 26ms (Views: 14.3ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-07-04 16:10:32 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zs/YC0n+C1PRREH4IVMSlNiKnrhP9gDzcpfIEYP92UIU7akjmHClG2qKOTKcyVCvdX4sG1TMAKgqjoPWabrN6w==", "post"=>{"title"=>"bob", "description"=>"bob"}, "commit"=>"Update Post", "id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:27:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-07-04 16:10:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 122ms (Views: 106.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-07-04 16:10:53 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 37ms (Views: 34.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-07-04 16:11:01 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aF6N6Ca7d7W4ynS7NZm52CN1R78VbA/hD0p+IA52UTQafPzA9zXZ/QMEDHGIA/vjjoH1HA5WD7pXUzXn5DFFnQ==", "post"=>{"title"=>"bob", "description"=>"bob"}, "commit"=>"Update Post", "id"=>"1"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:27:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.8ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-07-04 16:12:29 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aF6N6Ca7d7W4ynS7NZm52CN1R78VbA/hD0p+IA52UTQafPzA9zXZ/QMEDHGIA/vjjoH1HA5WD7pXUzXn5DFFnQ==", "post"=>{"title"=>"bob", "description"=>"bob"}, "commit"=>"Update Post", "id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-07-04 16:12:39 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 33ms (Views: 18.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-07-04 16:12:46 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-07-04 16:12:55 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SyJnJAE96qQjeoNfQdPFtYAgMQ0fjjoPwTNrXQxMEWM5ABYM0LNE7Ji0+5X8SYeOLdSDrgS0OlSZKiCa5gsFyg==", "post"=>{"title"=>"s", "description"=>"w"}, "commit"=>"Update Post", "id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-07-04 16:13:31 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-07-04 16:13:37 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YkzjUxUFTzcgUWy0T37x3h7w1pR0igiguXcPWz9rJKQQbpJ7xIvhf5ufFH7y5LPlswRkN2+wCPvhbkSc1SwwDQ==", "post"=>{"title"=>"post", "description"=>"post"}, "commit"=>"Update Post", "id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-07-04 16:13:58 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-07-04 16:14:04 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-07-04 16:14:11 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AfR4/9icG6+eBXx7xYdXJ8nFyRRYnmj9AFAGQ2z0Kodz1gnXCRK15yXLBLF4HRUcZDF7t0OkaKZYSU2EhrM+Lg==", "post"=>{"title"=>"post", "description"=>"post\r\n"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "post"], ["description", "post\r\n"], ["updated_at", "2018-07-04 21:14:11.296241"], ["id", 1]]
+  [1m[35m (4.2ms)[0m  commit transaction
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 5.2ms)
+
+ActionView::MissingTemplate (Missing template posts/update, application/update with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/goatcheese/code/labs/rails-form_for-on-edit-readme-v-000/app/views"
+):
+  actionview (4.2.10) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.10) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.10) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.10) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.10) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.10) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.10) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.10) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (15.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-07-04 16:15:28 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AfR4/9icG6+eBXx7xYdXJ8nFyRRYnmj9AFAGQ2z0Kodz1gnXCRK15yXLBLF4HRUcZDF7t0OkaKZYSU2EhrM+Lg==", "post"=>{"title"=>"post", "description"=>"post\r\n"}, "commit"=>"Update Post", "id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.6ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-07-04 16:19:21 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AfR4/9icG6+eBXx7xYdXJ8nFyRRYnmj9AFAGQ2z0Kodz1gnXCRK15yXLBLF4HRUcZDF7t0OkaKZYSU2EhrM+Lg==", "post"=>{"title"=>"post", "description"=>"post\r\n"}, "commit"=>"Update Post", "id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.6ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-07-04 16:19:33 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:19:38 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:19:41 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CtgniBcbZiQv1tBGeVJT5w4XOPB5h97YIdJgh51H8AR4+lagxpXIbJQYqIzEyBHco+OKU2K93oN5yytAdwDkrQ==", "post"=>{"title"=>"Rails Introduction bbb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.3ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:21:58 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:21:59 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rpI/KpBmRLRr+qsTaH3AesMe/X90OnqERztNUVPIRnrcsE4CQejq/NA009nV54JBbupP3G8Aet8fIgaWuY9S0w==", "post"=>{"title"=>"Rails Introduction bbb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.5ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:23:03 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:23:05 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pm+uPjlI8RbgfMqxb7cJsv0SShea+/YgKZ0yIo/NjGTUTd8W6MZfXluysnvSLUuJUOb4tIHB9ntxhHnlZYqYzQ==", "post"=>{"title"=>"Rails Introduction bbb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `post' for #<PostsController:0x007fb82a2180d8>):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.6ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:23:19 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:23:21 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ju/WlMK0DAvYMwYICEoThFRBmkru9l2nHmG3GQOXMlFUzae8EzqiQ2P9fsK10FG/+bUo6fXMXfxGePze6dAm+A==", "post"=>{"title"=>"Rails Introduction bbb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.1ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:26:09 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:26:12 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u/Wa1Ea9qzSfTZE/6PjKTNh6ZW10YAN2/CVp/n1M4UrJ1+v8lzMFfCSD6fVVYoh3dY7Xzm9aAy2kPCI5lwv14w==", "post"=>{"title"=>"Rails Introduction bbb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.1ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:26:14 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:27:24 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:27:26 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7MzM7FNvsWjRq26dRW6GiklT+aZcojPEOjHfMDvnEf6e7r3EguEfIGplFlf49MSx5KdLBUeYM59iKJT30aAFVw==", "post"=>{"title"=>"Rails Introduction bbb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.7ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:28:11 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:32:03 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms)
+
+TypeError (exception class/object expected):
+  app/controllers/posts_controller.rb:28:in `raise'
+  app/controllers/posts_controller.rb:28:in `edit'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.7ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:32:41 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+RuntimeError ({"controller"=>"posts", "action"=>"edit", "id"=>"2"}):
+  app/controllers/posts_controller.rb:28:in `edit'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.3ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:34:03 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:34:06 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aIJUpuQHpxVgWrwVGcOE5hanOix/e3r/jBf3iYm9W6QaoCWONYkJXduUxN+kWcbdu1OIj2RBeqTUDrxOY/pPDQ==", "post"=>{"title"=>"Rails Introduction bbb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.6ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:34:29 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aIJUpuQHpxVgWrwVGcOE5hanOix/e3r/jBf3iYm9W6QaoCWONYkJXduUxN+kWcbdu1OIj2RBeqTUDrxOY/pPDQ==", "post"=>{"title"=>"Rails Introduction bbb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.6ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:34:36 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 30ms (Views: 16.6ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:34:37 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lrbt0A3Ms1EiH8qMa+Xwbo5VVSJYZZAUtjic51qzGytclJz43EIdGZnRskbWf7JVI6HngUNfkE/uIdcgsPQPgg==", "post"=>{"title"=>"Rails Introduction bbb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:23:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.4ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:35:12 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lrbt0A3Ms1EiH8qMa+Xwbo5VVSJYZZAUtjic51qzGytclJz43EIdGZnRskbWf7JVI6HngUNfkE/uIdcgsPQPgg==", "post"=>{"title"=>"Rails Introduction bbb", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", nil], ["description", nil], ["updated_at", "2018-07-04 21:35:12.416063"], ["id", 2]]
+  [1m[36m (3.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 10ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-07-04 16:35:12 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:35:41 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:35:47 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r7gwOwfoxWOJ4Y/i1KuMy1wTCr7TN+wZcwrpzSzfueLdmkET1mZrKzIv9yhpMc7w8ee4HcgN7EIrE6IKxpitSw==", "post"=>{"title"=>"hello", "description"=>"hello"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:27:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.2ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:39:02 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:39:08 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NNA4xZm++3DFX/qZ0v1st+xWVJ00zgommV242PRvz+5G8kntSDBVOH6RglNvZy6MQaLmPi/0Cn3BRPMfHijbRw==", "post"=>{"title"=>"hello", "description"=>"hello"}, "commit"=>"Update Post", "id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/posts_controller.rb:27:in `update'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.8ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:41:21 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:41:28 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"55ceBbxo2m479jC68koT8jpbrU4vi2YH2QBp63/+9COVtW8tbeZ0JoA4SHBP0FHJl68f7TSxZlyBGSIslbngig==", "post"=>{"title"=>"hello", "description"=>"hello\r\n"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "hello"], ["description", "hello\r\n"], ["updated_at", "2018-07-04 21:41:28.134361"], ["id", 2]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 4.0ms)
+
+ActionView::MissingTemplate (Missing template posts/update, application/update with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/goatcheese/code/labs/rails-form_for-on-edit-readme-v-000/app/views"
+):
+  actionview (4.2.10) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.10) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.10) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.10) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.10) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.10) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.10) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.10) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (14.6ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:43:03 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"55ceBbxo2m479jC68koT8jpbrU4vi2YH2QBp63/+9COVtW8tbeZ0JoA4SHBP0FHJl68f7TSxZlyBGSIslbngig==", "post"=>{"title"=>"hello", "description"=>"hello\r\n"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms)
+
+ActionView::MissingTemplate (Missing template posts/update, application/update with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/goatcheese/code/labs/rails-form_for-on-edit-readme-v-000/app/views"
+):
+  actionview (4.2.10) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.10) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.10) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.10) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.10) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.10) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.10) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.10) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (16.2ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:43:06 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:43:08 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:43:08 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:43:09 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:43:09 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:43:09 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-07-04 16:43:12 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:43:18 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:43:24 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jsUM13UarxqXUppM85zLJPBHJ4WjDerY6yHnTySvDXX8533/pJQBUiyc4oZOBokfXbOVJrg36oOzOKyIzugZ3A==", "post"=>{"title"=>"hello", "description"=>"dude\r\n\r\n"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "dude\r\n\r\n"], ["updated_at", "2018-07-04 21:43:24.974760"], ["id", 2]]
+  [1m[35m (4.3ms)[0m  commit transaction
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 5.1ms)
+
+ActionView::MissingTemplate (Missing template posts/update, application/update with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/goatcheese/code/labs/rails-form_for-on-edit-readme-v-000/app/views"
+):
+  actionview (4.2.10) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.10) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.10) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.10) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.10) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.10) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.10) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.10) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /home/goatcheese/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+
+
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/goatcheese/.rvm/gems/ruby-2.4.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (15.8ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-07-04 16:43:30 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2018-07-04 16:45:43 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2018-07-04 16:45:48 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4XOCYF9ZWHlaSJUYvICk6cCFQyM3rHxW6XKCfLZ9I+WTUfNIjtf2MeGG7dIBGubSbXHxgCyWfA2xa8m7XDo3TA==", "post"=>{"title"=>"hello", "description"=>"hi\r\n\r\n"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "hi\r\n\r\n"], ["updated_at", "2018-07-04 21:45:48.405797"], ["id", 2]]
+  [1m[35m (4.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 12ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2018-07-04 16:45:48 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.1ms)
