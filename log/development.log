@@ -761,3 +761,31 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2018-07-04 20:04:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 931ms (Views: 804.9ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/posts/1" for ::1 at 2018-07-04 20:04:35 -0400
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1jyEy+eXyKzH4zzWfBO5+Xqo4qyVuPKnkBdr9HBm10z5MY5o90DjGzvsb8iWGmldy3Q6GD3Br1MH1oj4/U7i/g==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"yellow"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "yellow"], ["updated_at", "2018-07-05 00:04:35.319822"], ["id", 1]]
+  [1m[35m (73.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 82ms (ActiveRecord: 74.3ms)
+
+
+Started GET "/posts/1" for ::1 at 2018-07-04 20:04:35 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.3ms)
