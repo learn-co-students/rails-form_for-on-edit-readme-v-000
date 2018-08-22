@@ -761,3 +761,107 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/1/edit" for 104.244.193.160 at 2018-08-22 20:03:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 449ms (Views: 421.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 104.244.193.160 at 2018-08-22 20:03:37 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 104.244.193.160 at 2018-08-22 20:03:37 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 104.244.193.160 at 2018-08-22 20:03:37 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 104.244.193.160 at 2018-08-22 20:03:37 +0000
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 104.244.193.160 at 2018-08-22 20:03:37 +0000
+
+
+Started PATCH "/posts/1" for 104.244.193.160 at 2018-08-22 20:03:46 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3U5XQc86oevrl0rZXRIjgpdpbjNH63iImUZG0z1mrWDg47lr+qXP6M9NPEUJZuT+JTr+2Ar1m8EGcYCy1DafRw==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"Change this"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2018-08-22 20:03:46.289557"], ["id", 1]]
+  [1m[35m (49.1ms)[0m  commit transaction
+Redirected to http://67.205.165.109:46487/posts/1
+Completed 302 Found in 54ms (ActiveRecord: 49.6ms)
+
+
+Started GET "/posts/1" for 104.244.193.160 at 2018-08-22 20:03:46 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/1" for 104.244.193.160 at 2018-08-22 20:05:36 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for 104.244.193.160 at 2018-08-22 20:05:50 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/1" for 104.244.193.160 at 2018-08-22 20:05:57 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ecazezMWyQs+ZLMm/hYFINg6j1rl4e3LA08v36VL7mtEa11RBomnCBq+xbqqYsJcamkfsaj/DoKceOm+TBvcTA==", "post"=>{"title"=>"Title", "description"=>"Desc"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://67.205.165.109:46487/posts/1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1" for 104.244.193.160 at 2018-08-22 20:05:57 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for 104.244.193.160 at 2018-08-22 20:09:42 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 22ms (Views: 14.6ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/posts/1" for 104.244.193.160 at 2018-08-22 20:09:48 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/bFSIoZgpcd5lmtioILSX/FrrHo4ys4JJ2kbZ7SQfrLAHLwIs//LxF1MHf709hUjQzg8kXXULUC4Xt0GXcBMlQ==", "post"=>{"title"=>"Title", "description"=>"uyvuhb"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Title"], ["description", "uyvuhb"], ["updated_at", "2018-08-22 20:09:48.153319"], ["id", 1]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://67.205.165.109:46487/posts/1
+Completed 302 Found in 6ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/1" for 104.244.193.160 at 2018-08-22 20:09:48 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms)
