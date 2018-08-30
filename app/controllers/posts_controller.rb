@@ -1,3 +1,4 @@
+require 'pry'
 class PostsController < ApplicationController
 	def index
 		@posts = Post.all
@@ -24,8 +25,10 @@ class PostsController < ApplicationController
 	end
 
 	def update
-	  @post = Post.find(params[:id])
-	  @post.update(title: params[:title], description: params[:description])
+		@post = Post.find(params[:id])
+		#binding.pry
+	  #@post.update(title: params[:post][:title], description: params[:post][:description])
+	  @post.update(params.require(:post))
 	  redirect_to post_path(@post)
 	end
 end
