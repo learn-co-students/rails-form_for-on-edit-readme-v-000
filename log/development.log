@@ -761,3 +761,152 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 192.101.73.50 at 2018-08-31 20:17:19 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 29ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 192.101.73.50 at 2018-08-31 20:17:26 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 458ms (Views: 453.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 192.101.73.50 at 2018-08-31 20:17:26 +0000
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 192.101.73.50 at 2018-08-31 20:17:26 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.101.73.50 at 2018-08-31 20:17:26 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 192.101.73.50 at 2018-08-31 20:17:26 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.101.73.50 at 2018-08-31 20:17:26 +0000
+
+
+Started POST "/posts" for 192.101.73.50 at 2018-08-31 20:17:30 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TKW6TrmcpThxoafwvYcvEuGOJ3tcWUimEoUef3Ocj8FJr94BcMEbD++XUBnZtDPed023ihzdjIkQcSR2YFpCYQ==", "title"=>"ta", "description"=>"ta", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ta"], ["description", "ta"], ["created_at", "2018-08-31 20:17:30.796936"], ["updated_at", "2018-08-31 20:17:30.796936"]]
+  [1m[35m (66.6ms)[0m  commit transaction
+Redirected to http://165.227.31.156:52986/posts/5
+Completed 302 Found in 73ms (ActiveRecord: 67.4ms)
+
+
+Started GET "/posts/5" for 192.101.73.50 at 2018-08-31 20:17:30 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5/edit" for 192.101.73.50 at 2018-08-31 20:17:33 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (26.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00000001e27178>:0x007f348419ff18>):
+    2: 
+    3: <%= form_for(@post) do %>
+    4:   <label>Post title:</label><br>
+    5:   <%= f.text_field :title%><br>
+    6: 
+    7:   <label>Post Description</label><br>
+    8:   <%= f.text_area :description%><br>
+  app/views/posts/edit.html.erb:5:in `block in _app_views_posts_edit_html_erb__3458504215863293711_69931765659140'
+  app/views/posts/edit.html.erb:3:in `_app_views_posts_edit_html_erb__3458504215863293711_69931765659140'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.3ms)
+
+
+Started POST "/posts" for 192.101.73.50 at 2018-08-31 20:17:47 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TKW6TrmcpThxoafwvYcvEuGOJ3tcWUimEoUef3Ocj8FJr94BcMEbD++XUBnZtDPed023ihzdjIkQcSR2YFpCYQ==", "title"=>"tale", "description"=>"town", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "tale"], ["description", "town"], ["created_at", "2018-08-31 20:17:47.582288"], ["updated_at", "2018-08-31 20:17:47.582288"]]
+  [1m[36m (85.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.31.156:52986/posts/6
+Completed 302 Found in 89ms (ActiveRecord: 86.0ms)
+
+
+Started GET "/posts/6" for 192.101.73.50 at 2018-08-31 20:17:47 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/6/edit" for 192.101.73.50 at 2018-08-31 20:17:50 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered posts/edit.html.erb within layouts/application (19.5ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00000001e27178>:0x007f347815b388>):
+    2: 
+    3: <%= form_for(@post) do %>
+    4:   <label>Post title:</label><br>
+    5:   <%= f.text_field :title%><br>
+    6: 
+    7:   <label>Post Description</label><br>
+    8:   <%= f.text_area :description%><br>
+  app/views/posts/edit.html.erb:5:in `block in _app_views_posts_edit_html_erb__3458504215863293711_69931765659140'
+  app/views/posts/edit.html.erb:3:in `_app_views_posts_edit_html_erb__3458504215863293711_69931765659140'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.2ms)
+
+
+Started GET "/posts/6/edit" for 192.101.73.50 at 2018-08-31 20:19:16 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered posts/edit.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/6" for 192.101.73.50 at 2018-08-31 20:19:20 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pIcXWu3NVfUweuvVEpeaYFcqe9TLqmj6O43OOCi+mI2hjXMVJJDrwq5MHDx2pIaswenrJYsurNU5efQxO3hVLQ==", "post"=>{"title"=>"talea", "description"=>"towna"}, "commit"=>"Update Post", "id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2018-08-31 20:19:20.995069"], ["id", 6]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://165.227.31.156:52986/posts/6
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/6" for 192.101.73.50 at 2018-08-31 20:19:21 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/6" for 192.101.73.50 at 2018-08-31 20:21:30 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 22ms (Views: 13.5ms | ActiveRecord: 1.0ms)
