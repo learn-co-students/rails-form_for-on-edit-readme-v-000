@@ -24,8 +24,10 @@ class PostsController < ApplicationController
 	end
 
 	def update
+		#binding.pry
 	  @post = Post.find(params[:id])
-	  @post.update(title: params[:title], description: params[:description])
+		#@post.update(title: params[:title], description: params[:description])
+		@post.update(params.require(:post)) #Params are a nested array
 	  redirect_to post_path(@post)
 	end
 end
