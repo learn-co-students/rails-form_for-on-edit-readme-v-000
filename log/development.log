@@ -761,3 +761,129 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 74.72.0.210 at 2018-09-28 15:54:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 414ms (Views: 399.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 74.72.0.210 at 2018-09-28 15:54:34 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 74.72.0.210 at 2018-09-28 15:54:35 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 74.72.0.210 at 2018-09-28 15:54:35 +0000
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 74.72.0.210 at 2018-09-28 15:54:35 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 74.72.0.210 at 2018-09-28 15:54:35 +0000
+
+
+Started POST "/posts" for 74.72.0.210 at 2018-09-28 15:54:37 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MplPQHJk9QJHFfA/t95r2bGm+aH2rVIjuBU0lGEOBm2CaSnIgQKSxnR4ZZ50VABBWYR+2L6DytgdghN+GlIttQ==", "title"=>"sdfsdf", "description"=>"sdfsd", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sdfsdf"], ["description", "sdfsd"], ["created_at", "2018-09-28 15:54:37.500093"], ["updated_at", "2018-09-28 15:54:37.500093"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Redirected to http://67.205.182.198:58077/posts/5
+Completed 302 Found in 9ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/posts/5" for 74.72.0.210 at 2018-09-28 15:54:37 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 49.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5/edit" for 74.72.0.210 at 2018-09-28 15:54:41 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/5" for 74.72.0.210 at 2018-09-28 15:55:00 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ekvhi+wWElCrG+WvhlsgIQ/fphoy1VXaKe5rlwConF+iu4cDH3B1lJh2cA5F0Uu55/0hY3r7zSGMeUx9e/S3hw==", "post"=>{"title"=>"sdfsdf", "description"=>"sdfsd\r\nrtergtredtg"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2018-09-28 15:55:00.983783"], ["id", 5]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://67.205.182.198:58077/posts/5
+Completed 302 Found in 8ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/5" for 74.72.0.210 at 2018-09-28 15:55:01 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/5/edit" for 74.72.0.210 at 2018-09-28 16:01:54 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 13.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/new" for 74.72.0.210 at 2018-09-28 16:01:59 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 74.72.0.210 at 2018-09-28 16:02:02 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nEGTGBX7yd4qUnv2Z2ech3YPlYd6dSQzz5cP6V03ZFossfWQ5p2uGhk/7lek7fcfni0S/jJbvMhqACgDJmtPgg==", "title"=>"adadas", "description"=>"sdfsd", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "adadas"], ["description", "sdfsd"], ["created_at", "2018-09-28 16:02:02.773815"], ["updated_at", "2018-09-28 16:02:02.773815"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.182.198:58077/posts/6
+Completed 302 Found in 6ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/posts/6" for 74.72.0.210 at 2018-09-28 16:02:02 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/6/edit" for 74.72.0.210 at 2018-09-28 16:02:08 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered posts/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/6" for 74.72.0.210 at 2018-09-28 16:02:12 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VHHv+dUUw3nnzHcPtlre1ytetTtVs0UfInOmEYIt+nDkgYlxJnKkvdSh4q510LVPw3wyQh2d3eSH5IH7+XHRqA==", "post"=>{"title"=>"adadas", "description"=>"sdfsd\r\newrewr"}, "commit"=>"Update Post", "id"=>"6"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["description", "sdfsd\r\newrewr"], ["updated_at", "2018-09-28 16:02:12.188030"], ["id", 6]]
+  [1m[36m (94.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.182.198:58077/posts/6
+Completed 302 Found in 98ms (ActiveRecord: 94.9ms)
+
+
+Started GET "/posts/6" for 74.72.0.210 at 2018-09-28 16:02:12 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms)
