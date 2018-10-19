@@ -1,5 +1,19 @@
 <h3>Post Form</h3>
 
+<!-- USING FORM_FOR: -->
+<%= form_for(@post) do |f| %>
+  <label>Post title:</label><br>
+  <%= f.text_field :title %><br>
+
+  <label>Post Description</label><br>
+  <%= f.text_area :description %><br>
+  
+  <%= f.submit %>
+<% end %>
+
+<!--  
+
+USING FORM TAG: 
 <%= form_tag post_path(@post), method: "put" do %>
   <label>Post title:</label><br>
   <%= text_field_tag :title, @post.title %><br>
@@ -9,3 +23,5 @@
   
   <%= submit_tag "Submit Post" %>
 <% end %>
+
+-->
