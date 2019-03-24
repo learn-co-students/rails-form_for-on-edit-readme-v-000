@@ -8,7 +8,6 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post = Post.new
 	end
 
 	def create
@@ -16,16 +15,18 @@ class PostsController < ApplicationController
 	  @post.title = params[:title]
 	  @post.description = params[:description]
 	  @post.save
+		# binding.pry
 	  redirect_to post_path(@post)
 	end
 
 	def edit
 		@post = Post.find(params[:id])
+		# binding.pry
 	end
 
 	def update
 	  @post = Post.find(params[:id])
-	  @post.update(title: params[:title], description: params[:description])
-	  redirect_to post_path(@post)
+	  @post.update(title: params[:post][:title], description: params[:post][:description])
+		redirect_to post_path(@post)
 	end
 end
